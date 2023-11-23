@@ -36,6 +36,46 @@ const eur = new Currency({
 })
 ```
 
+## Configuration (currency Exchange)!
+
+One of the most important features of this library is converting between currencies. Since currencies are constantly changing in value it is important to be able gather live data of the exchange rates. You need to configure a way to get the exchange rates for the currencies you are using. The library provides a simple interface to provide the exchange rate.
+
+```javascript
+Currency.config({
+  getRates: async (from, to) => {
+    // here you should return the correct rate depending on the currencies
+    if (from === "EUR" && to === "USD") {
+      return Promise.resolve(1.2);
+    }
+    if (from === "USD" && to === "EUR") {
+      return Promise.resolve(1 / 1.2);
+    }
+    if (from === "USD" && to === "JPY") {
+      return Promise.resolve(1 / 0.009);
+    }
+    if (from === "JPY" && to === "USD") {
+      return Promise.resolve(0.009);
+    };
+    return 1;
+  }
+})
+```
+
+By providing this function you can use the Exchange methods on the Currency object.
+
+```javascript
+const usd = new Currency({
+  amount: 10,
+  currency: "USD"
+})
+
+const eur = await usd.convertTo("EUR");
+eur.toAmount() // "8.33"
+
+const jpy = await usd.convertTo("JPY");
+jpy.toAmount() // "1111"
+```
+
 ## API
 
 ### new Currency({amount, currency})

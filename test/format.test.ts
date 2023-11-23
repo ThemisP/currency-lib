@@ -21,4 +21,13 @@ describe("Format number tests", () => {
   it("toFormat(\"CCC AA SS\") should return 'USD 10.00 $'", () => {
     expect(currency.toFormat("CCC AA SS")).toBe("USD 10.00 $");
   });
+  it("toFormat(\"CCC AA SS AA CCC\") should return 'USD 10.00 $ 10.00 USD'", () => {
+    expect(currency.toFormat("CCC AA SS AA CCC")).toBe("USD 10.00 $ 10.00 USD");
+  });
+  it("toFormat(\"CCCAASSAACCC\") should return 'USD10.00$10.00USD'", () => {
+    expect(currency.toFormat("CCCAASSAACCC")).toBe("USD10.00$10.00USD");
+  });
+  it("toFormat(\"CCCCCCSSSSAA\") should return 'USDUSD$$10.00'", () => {
+    expect(currency.toFormat("CCCCCCSSSSAA")).toBe("USDUSD$$10.00");
+  });
 });

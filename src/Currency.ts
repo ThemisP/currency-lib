@@ -36,10 +36,10 @@ export default class Currency {
    * @returns 
    */
   toFormat(template: string = "SS AA"): string {
-    template = template.replace("AA", this.toAmount());
-    template = template.replace("CCC", this.currency);
-    template = template.replace("SS", CURRENCY_DETAILS[this.currency].symbol);
-    template = template.replace("NNN", CURRENCY_DETAILS[this.currency].name);
+    template = template.replace(/AA/g, this.toAmount());
+    template = template.replace(/CCC/g, this.currency);
+    template = template.replace(/SS/g, CURRENCY_DETAILS[this.currency].symbol);
+    template = template.replace(/NNN/g, CURRENCY_DETAILS[this.currency].name);
     return template;
   }
 
