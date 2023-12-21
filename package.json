@@ -1,6 +1,6 @@
 {
   "name": "bcurrency",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -22,5 +22,11 @@
   "dependencies": {
     "bignumber.js": "^9.1.2",
     "tsup": "^7.2.0"
-  }
+  },
+  "files": [
+    "/dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ]
 }
