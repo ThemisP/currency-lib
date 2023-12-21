@@ -1,4 +1,4 @@
 import Currency from "./Currency";
 
 export default Currency;
-export { CURRENCIES } from "./Currencies";
+export { CURRENCIES, CURRENCY_DETAILS } from "./Currencies";
