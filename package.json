@@ -1,6 +1,6 @@
 {
-  "name": "currency",
-  "version": "1.0.0",
+  "name": "bcurrency",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

@@ -1,6 +1,6 @@
 # Currency Library
 
-[![npm version](https://badge.fury.io/js/type-standard-validator.svg)](https://www.npmjs.com/package/type-standard-validator)
+[![npm version](https://badge.fury.io/js/bcurrency.svg)](https://www.npmjs.com/package/bcurrency)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
@@ -22,7 +22,7 @@ yarn add currency-library
 ## Usage
 
 ```javascript
-const Currency = require("currency");
+const Currency = require("bcurrency");
 
 
 const usd = new Currency({
